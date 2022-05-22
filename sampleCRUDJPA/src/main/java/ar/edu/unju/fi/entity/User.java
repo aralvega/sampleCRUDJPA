@@ -1,15 +1,21 @@
 package ar.edu.unju.fi.entity;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.ManyToAny;
 
 /**
  * Represents an User
@@ -58,12 +64,24 @@ public class User implements Serializable{
 	 */
 	@Column(name = "user_password", unique=true)
 	private String password;
+	
+	/**
+	 * REpresent the list of roles of the User
+	 */
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "user_roles",
+	           joinColumns = @JoinColumn(referencedColumnName = "user_id"),
+	           inverseJoinColumns = @JoinColumn(referencedColumnName = "role_id"))
+	private Set<Role> roles;
 		
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(Long id, String firstName, String lasttName, String email, String userName, String password) {
+	
+
+	public User(Long id, String firstName, String lasttName, String email, String userName, String password,
+			Set<Role> roles) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -71,7 +89,10 @@ public class User implements Serializable{
 		this.email = email;
 		this.userName = userName;
 		this.password = password;
+		this.roles = roles;
 	}
+
+
 
 	public Long getId() {
 		return id;
@@ -119,6 +140,15 @@ public class User implements Serializable{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
 	}
 	
 	
