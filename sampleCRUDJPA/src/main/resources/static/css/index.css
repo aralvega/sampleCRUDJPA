@@ -1,1 +1,59 @@
 @charset "utf-8";
+
+body {
+	background: url("../images/principal_background.jpg") no-repeat center center fixed;
+	background-size: cover;
+}
+
+button{
+	margin: 5px 0 25px;
+	width: 60%;
+}
+
+.custom-content{
+	border-radius:10px;
+	background-color:#3b4652;
+	box-shadow:0px 0px 20px #848484;
+	opacity: .75;
+	padding: 0 20px;
+}
+
+.forgout{
+	padding: 5px 0;
+}
+
+.forgout a{
+	color: orange;
+}
+
+.form-group input{
+	font-size:18px;
+	height: 42px;
+	border: 0;
+	border-radius:5px;
+	padding-left: 54px;
+}
+
+
+.icon-format{
+	font-size: 22px; 
+	position: absolute; 
+	left: 35px; 
+	margin-top: 10px;
+}
+
+.image-size-small{
+	border-radius:50%;
+	box-shadow:0px 0px 20px #848484;
+	height:30%;
+	margin:0 auto;
+	width:30%;
+	margin-top: -70px;
+	margin-bottom: 5%;;
+	}
+	
+.main-section{
+	margin: 0 auto;
+	margin-top: 14%;
+	padding: 0;
+}	
