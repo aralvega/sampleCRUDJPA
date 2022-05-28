@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="es">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" type="text/css"
+			th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+			
+		<!-- Custom CSS -->
+		<link rel="stylesheet" type="text/css" th:href="@{/css/menu.css}" />
+		
+		
+		<!-- Icons solid type of fontawesome -->
+		<link rel="stylesheet" type="text/css"
+			th:href="@{/webjars/fortawesome__fontawesome-free/css/solid.min.css}" />
+			
+		<title>Menu Application</title>
+	</head>
+	<body>
+		<header th:replace="layouts/commons::header"></header>
+		
+		<div th:replace="layouts/commons::refBootstrapjs"></div>
+	</body>
+</html>
