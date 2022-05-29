@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="es">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+
+<!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" th:href="@{/css/menu.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/users.css}" />
+
+
+<!-- Icons solid type of fontawesome -->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/fortawesome__fontawesome-free/css/solid.min.css}" />
+	
+<!-- Datatables bootstrap css -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/sp-2.0.1/datatables.min.css"/>
+
+<title>Users CRUD</title>
+</head>
+<body>
+	<header th:replace="layouts/commons::header"></header>
+
+	<div class="container">
+		<ul class="nav nav-tabs justify-content-end main-section"
+			id="myUserTab" role="tablist">
+			<li class="nav-item" role="presentation">
+				<button class="nav-link active" id="list-tab" data-bs-toggle="tab"
+					data-bs-target="#list-tab-pane" type="button" role="tab"
+					aria-controls="list-tab-pane" aria-selected="true">Listado
+					Usuarios</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="form-tab" data-bs-toggle="tab"
+					data-bs-target="#form-tab-pane" type="button" role="tab"
+					aria-controls="form-tab-pane" aria-selected="false">Formulario
+					de Usuario</button>
+			</li>
+
+		</ul>
+		<div class="tab-content" id="myUserTabContent">
+			<div class="tab-pane fade show active" id="list-tab-pane"
+				role="tabpanel" aria-labelledby="list-tab" tabindex="0">
+				<div class="card">
+					<div class="card-header">
+						<h4>Tabla de Usuarios</h4>
+					</div>
+					<div class="card-body">
+						<!-- Lista de usuarios-->
+							<div class="table-responsive">
+								<table id="userList"
+									class="table table-warning table-bordered table-hover table-striped">
+									<thead class="table-dark">
+										<tr>
+											<th scope="col">#</th>
+											<th scope="col">Nombres</th>
+											<th scope="col">Apellidos</th>
+											<th scope="col">Nombre de Usuario</th>
+											<th scope="col">E-mail</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="row">1</th>
+											<td>Cristian</td>
+											<td>Ruiz</td>
+											<td>c.r.username</td>
+											<td>c.r.username@blog.com</td>
+											<td><a href="#"><i class="fas fa-edit"></i></a> | <a
+												href="#"><i class="fas fa-user-times"></i></a></td>
+										</tr>
+										<tr>
+											<th scope="row">2</th>
+											<td>Cristian</td>
+											<td>Ruiz</td>
+											<td>c.r.username</td>
+											<td>c.r.username@blog.com</td>
+											<td><a href="#"><i class="fas fa-edit"></i></a> | <a
+												href="#"><i class="fas fa-user-times"></i></a></td>
+										</tr>
+										<tr>
+											<th scope="row">3</th>
+											<td>Cristian</td>
+											<td>Ruiz</td>
+											<td>c.r.username</td>
+											<td>c.r.username@blog.com</td>
+											<td><a href="#"><i class="fas fa-edit"></i></a> | <a
+												href="#"><i class="fas fa-user-times"></i></a></td>
+										</tr>
+										<tr>
+											<th scope="row">4</th>
+											<td>Cristian</td>
+											<td>Ruiz</td>
+											<td>c.r.username</td>
+											<td>c.r.username@blog.com</td>
+											<td><a href="#"><i class="fas fa-edit"></i></a> | <a
+												href="#"><i class="fas fa-user-times"></i></a></td>
+										</tr>
+										<tr>
+											<th scope="row">5</th>
+											<td>Cristian</td>
+											<td>Ruiz</td>
+											<td>c.r.username</td>
+											<td>c.r.username@blog.com</td>
+											<td><a href="#"><i class="fas fa-edit"></i></a> | <a
+												href="#"><i class="fas fa-user-times"></i></a></td>
+										</tr>
+										<tr>
+											<th scope="row">6</th>
+											<td>Cristian</td>
+											<td>Ruiz</td>
+											<td>c.r.username</td>
+											<td>c.r.username@blog.com</td>
+											<td><a href="#"><i class="fas fa-edit"></i></a> | <a
+												href="#"><i class="fas fa-user-times"></i></a></td>
+										</tr>
+
+									</tbody>
+								</table>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="form-tab-pane" role="tabpanel"
+				aria-labelledby="form-tab" tabindex="0">
+				<div class="card">
+					<div class="card-header">
+						<h4>Creación/Edición de Usuario</h4>
+					</div>
+					<div class="card-body">
+						<!-- Formulario para usuarios-->
+						<form class="form" role="form" autocomplete="off">
+							<div class="mb-3 row">
+								<label for="txtNombres" class="col-sm-2 col-form-label">Nombres</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="txtNombres"
+										placeholder="Ingrese los nombres de la persona">
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="txtApellidos" class="col-sm-2 col-form-label">Apellidos</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="txtApellidos"
+										placeholder="Ingrese los apellidos del usuario">
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="txtEmail" class="col-sm-2 col-form-label">E-Mail</label>
+								<div class="col-sm-10">
+									<input type="email" class="form-control" id="txtEmail"
+										placeholder="email@example.com">
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="txtUserName" class="col-sm-2 col-form-label">Nombre
+									de Usuario</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="txtUserName"
+										placeholder="Ingrese el nombre de usuario">
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="txtPassword" class="col-sm-2 col-form-label">Password</label>
+								<div class="col-sm-10">
+									<input type="password" class="form-control" id="txtPassword">
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="txtPasswordRepeat" class="col-sm-2 col-form-label">Confirmar
+									Password</label>
+								<div class="col-sm-10">
+									<input type="password" class="form-control"
+										id="txtPasswordRepeat">
+								</div>
+							</div>
+
+							<div class="col-lg-12 text-center">
+								<input type="reset" class="btn btn-secondary" value="Cancelar">
+								<input type="button" class="btn btn-primary"
+									value="Guardar Cambios">
+							</div>
+						</form>
+
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+
+	</div>
+	<div th:replace="layouts/commons::refBootstrapjs"></div>
+	<div th:replace="layouts/commons::refDataTable"></div>
+	<div th:insert="layouts/commons::refFontawesome"></div>
+	
+	<script>
+      $(document).ready(function () {
+        $('#userList').DataTable({
+	        "language": {
+	            "lengthMenu": "Visualizar _MENU_ registros por página",
+	            "zeroRecords": "No se hallaron coincidencias",
+	            "info": "Visualizando _PAGE_ de _PAGES_ páginas",
+	            "infoEmpty": "Registros no disponibles",
+	            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+	            "search":         "Búsqueda:",
+	            "paginate": {
+			        "first":      "Primero",
+			        "last":       "Último",
+			        "next":       "Siguiente",
+			        "previous":   "Anterior"
+			    },
+	        }
+	        
+	    });
+      });
+    </script>
+
+</body>
+</html>
