@@ -25,61 +25,16 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<th scope="row">1</th>
-							<td>Cristian</td>
-							<td>Ruiz</td>
-							<td>c.r.username</td>
-							<td>c.r.username@blog.com</td>
+						<tr th:each="user:${users}">
+							<th th:text="${user.id}"></th>
+							<td th:text="${user.firstName}"></td>
+							<td th:text="${user.lasttName}"></td>
+							<td th:text="${user.userName}"></td>
+							<td th:text="${user.email}"></td>
 							<td><a href="#"><i class="fas fa-edit"></i></a> | <a
 								href="#"><i class="fas fa-user-times"></i></a></td>
 						</tr>
-						<tr>
-							<th scope="row">2</th>
-							<td>Cristian</td>
-							<td>Ruiz</td>
-							<td>c.r.username</td>
-							<td>c.r.username@blog.com</td>
-							<td><a href="#"><i class="fas fa-edit"></i></a> | <a
-								href="#"><i class="fas fa-user-times"></i></a></td>
-						</tr>
-						<tr>
-							<th scope="row">3</th>
-							<td>Cristian</td>
-							<td>Ruiz</td>
-							<td>c.r.username</td>
-							<td>c.r.username@blog.com</td>
-							<td><a href="#"><i class="fas fa-edit"></i></a> | <a
-								href="#"><i class="fas fa-user-times"></i></a></td>
-						</tr>
-						<tr>
-							<th scope="row">4</th>
-							<td>Cristian</td>
-							<td>Ruiz</td>
-							<td>c.r.username</td>
-							<td>c.r.username@blog.com</td>
-							<td><a href="#"><i class="fas fa-edit"></i></a> | <a
-								href="#"><i class="fas fa-user-times"></i></a></td>
-						</tr>
-						<tr>
-							<th scope="row">5</th>
-							<td>Cristian</td>
-							<td>Ruiz</td>
-							<td>c.r.username</td>
-							<td>c.r.username@blog.com</td>
-							<td><a href="#"><i class="fas fa-edit"></i></a> | <a
-								href="#"><i class="fas fa-user-times"></i></a></td>
-						</tr>
-						<tr>
-							<th scope="row">6</th>
-							<td>Cristian</td>
-							<td>Ruiz</td>
-							<td>c.r.username</td>
-							<td>c.r.username@blog.com</td>
-							<td><a href="#"><i class="fas fa-edit"></i></a> | <a
-								href="#"><i class="fas fa-user-times"></i></a></td>
-						</tr>
-
+						
 					</tbody>
 				</table>
 			</div>
