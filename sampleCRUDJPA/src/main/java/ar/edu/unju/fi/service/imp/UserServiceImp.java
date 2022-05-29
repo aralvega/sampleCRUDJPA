@@ -17,4 +17,12 @@ public class UserServiceImp implements IUserService{
 		return userRepository.findAll();
 	}
 
+	public IUserRepository getUserRepository() {
+		return userRepository;
+	}
+
+	public void setUserRepository(IUserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
+
 }

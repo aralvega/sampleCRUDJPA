@@ -11,26 +11,29 @@
 		</div>
 		<div class="card-body">
 			<!-- Formulario para usuarios-->
-			<form class="form" role="form" autocomplete="off">
+			<form class="form" th:object="${anUser}" role="form" autocomplete="off">
 				<div class="mb-3 row">
 					<label for="txtNombres" class="col-sm-2 col-form-label">Nombres</label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" id="txtNombres"
-							placeholder="Ingrese los nombres de la persona">
+							placeholder="Ingrese los nombres de la persona"
+							th:field="${anUser.firstName}">
 					</div>
 				</div>
 				<div class="mb-3 row">
 					<label for="txtApellidos" class="col-sm-2 col-form-label">Apellidos</label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" id="txtApellidos"
-							placeholder="Ingrese los apellidos del usuario">
+							placeholder="Ingrese los apellidos del usuario"
+							th:field="${anUser.lasttName}">
 					</div>
 				</div>
 				<div class="mb-3 row">
 					<label for="txtEmail" class="col-sm-2 col-form-label">E-Mail</label>
 					<div class="col-sm-10">
 						<input type="email" class="form-control" id="txtEmail"
-							placeholder="email@example.com">
+							placeholder="email@example.com"
+							th:field="${anUser.email}">
 					</div>
 				</div>
 				<div class="mb-3 row">
@@ -38,20 +41,32 @@
 						de Usuario</label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" id="txtUserName"
-							placeholder="Ingrese el nombre de usuario">
+							placeholder="Ingrese el nombre de usuario"
+							th:field="${anUser.userName}">
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label for="selectRoles" class="col-sm-2 col-form-label">Roles</label>
+					<div class="col-sm-10">
+						<select class="form-control" id="selectRoles" size="3" th:field="${anUser.roles}">
+							<option th:each="role:${roles}" th:value="${role.id}"
+									th:text="${role.name}"></option>
+						</select>
 					</div>
 				</div>
 				<div class="mb-3 row">
 					<label for="txtPassword" class="col-sm-2 col-form-label">Password</label>
 					<div class="col-sm-10">
-						<input type="password" class="form-control" id="txtPassword">
+						<input type="password" class="form-control" id="txtPassword"
+						th:field="${anUser.password}">
 					</div>
 				</div>
 				<div class="mb-3 row">
 					<label for="txtPasswordRepeat" class="col-sm-2 col-form-label">Confirmar
 						Password</label>
 					<div class="col-sm-10">
-						<input type="password" class="form-control" id="txtPasswordRepeat">
+						<input type="password" class="form-control" id="txtPasswordRepeat"
+						th:field="${repeatPassword}">
 					</div>
 				</div>
 
