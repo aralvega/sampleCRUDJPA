@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="es">
+<head>
+<meta charset="utf-8">
+<title>Card Users</title>
+</head>
+<body>
+	<div th:fragment="cardUserForm" class="card">
+		<div class="card-header">
+			<h4>Creación/Edición de Usuario</h4>
+		</div>
+		<div class="card-body">
+			<!-- Formulario para usuarios-->
+			<form class="form" role="form" autocomplete="off">
+				<div class="mb-3 row">
+					<label for="txtNombres" class="col-sm-2 col-form-label">Nombres</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="txtNombres"
+							placeholder="Ingrese los nombres de la persona">
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label for="txtApellidos" class="col-sm-2 col-form-label">Apellidos</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="txtApellidos"
+							placeholder="Ingrese los apellidos del usuario">
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label for="txtEmail" class="col-sm-2 col-form-label">E-Mail</label>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" id="txtEmail"
+							placeholder="email@example.com">
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label for="txtUserName" class="col-sm-2 col-form-label">Nombre
+						de Usuario</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="txtUserName"
+							placeholder="Ingrese el nombre de usuario">
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label for="txtPassword" class="col-sm-2 col-form-label">Password</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="txtPassword">
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label for="txtPasswordRepeat" class="col-sm-2 col-form-label">Confirmar
+						Password</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="txtPasswordRepeat">
+					</div>
+				</div>
+
+				<div class="col-lg-12 text-center">
+					<input type="reset" class="btn btn-secondary" value="Cancelar">
+					<input type="button" class="btn btn-primary"
+						value="Guardar Cambios">
+				</div>
+			</form>
+
+
+		</div>
+	</div>
+
+
+</body>
+</html>
